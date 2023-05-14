@@ -1,39 +1,45 @@
+/* Set background color of the page to #323232 */
 body {
-    margin: 0;
     background-color: #323232;
-    /* Hintergrundfarbe auf #323232 setzen */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: white;
 }
 
 h1 {
-    color: white;
     text-align: center;
-    margin-bottom: 0;
-    font-size: 70px;
 }
 
+#content {
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Set white border-color and thicker table borders */
 table {
     border-collapse: collapse;
-    font-family: 'Open Sans', sans-serif;
-    /* Schriftart auf Open Sans setzen */
-    color: white;
-    /* Schriftfarbe auf weiß setzen */
+    /* Fix typo: should be 'collapse', not 'coll' */
 }
 
-table td {
-    width: 200px;
-    height: 200px;
+td {
+    width: 100px;
+    height: 100px;
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: bold;
-    padding: 10px;
     cursor: pointer;
-    border: 10px solid white;
 }
 
 td:hover {
-    background-color: rgba(255, 255, 255, 0.226);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
+table td {
+    border: 5px solid white;
+}
 
 table tr:first-child td {
     border-top: 0;
@@ -51,16 +57,36 @@ table tr td:last-child {
     border-right: 0;
 }
 
-#message {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: white;
-    /* Schriftfarbe auf weiß setzen */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.content {
-    height: 90vh;
-    display: grid;
-    place-items: center;
+.mt-32 {
+    margin-top: 32px;
+}
+
+button {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #00B0EF;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #96cadd;
+}
+
+.your-choise {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }

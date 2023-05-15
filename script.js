@@ -31,14 +31,14 @@ function render() {
   for (let i = 0; i < 3; i++) {
     tableHtml += '<tr>';
     for (let j = 0; j < 3; j++) {
-      const index = i * 3 + j;
-      let symbol = '';
-      if (fields[index] === 'circle') {
-        symbol = generateCircleSVG();
+      const index = i * 3 + j;                            // mit dieser Berechnung wird das Feld errechnet
+      let symbol = '';                                    // symbol ist erst mal nicht definiert
+      if (fields[index] === 'circle') { 
+        symbol = generateCircleSVG();                     // symbold wird in diesem fall zu einem Circle
       } else if (fields[index] === 'cross') {
-        symbol = generateCrossSVG();
+        symbol = generateCrossSVG();                      // symbol wird in diesem fall zu eine Kreis. 
       }
-      tableHtml += `<td onclick="handleClick(this, ${index})">${symbol}</td>`;
+      tableHtml += `<td onclick="handleClick(this, ${index})">${symbol}</td>`;      // der Funktion werden die Variablen index(die position) und symbol(Keis oder Kreuz je nach dem)
     }
     tableHtml += '</tr>';
   }
@@ -65,8 +65,8 @@ function restartGame() {
   document.getElementById('your-choice').innerHTML = ``;
 }
 
-function handleClick(cell, index) {
-  if (fields[index] === null) {
+function handleClick(cell, index) {                     // die Variablen wurden von der Render Funktion übergeben.
+  if (fields[index] === null) {                         // wenn dies position = null ist geht er in die 
     fields[index] = currentPlayer;
     cell.innerHTML = currentPlayer === 'circle' ? generateCircleSVG() : generateCrossSVG();
     cell.onclick = null;
